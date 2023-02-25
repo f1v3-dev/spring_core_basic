@@ -14,9 +14,6 @@ public class OrderServiceImpl implements OrderService{
         this.discountPolicy = discountPolicy;
     }
 
-//    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
-//    이 코드를 고쳐야 한다. -> OCP를 위반!!
-//    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
     
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
