@@ -31,7 +31,8 @@ public class AppConfig {
      *      1. call AppConfig.memberService
      *      2. call AppConfig.memberRepository
      *      3. call AppConfig.orderService
-     *      => Singleton을 유지한 모습 !
+     *      => memberRepository를 한 번만 호출하여 Singleton을 유지한 모습 !
+     *         '@Configuration의 역할'
      */
 
 
