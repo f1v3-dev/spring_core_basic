@@ -1,5 +1,7 @@
 package hello.core;
 import hello.core.member.MemoryMemberRepository;
+import hello.core.order.OrderService;
+import hello.core.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +16,11 @@ import static org.springframework.context.annotation.ComponentScan.*;
         excludeFilters = @Filter(type = FilterType.ANNOTATION, classes = Configuration.class)
 )
 public class AutoAppConfig {
+
+    @Bean
+    OrderService orderService(){
+        return new OrderServiceImpl();
+    }
 
     // 수동 빈 등록이 우선권 (수동 빈이 자동 빈을 오버라이딩)
     @Bean(name = "memoryMemberRepository")
