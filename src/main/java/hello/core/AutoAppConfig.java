@@ -17,15 +17,12 @@ import static org.springframework.context.annotation.ComponentScan.*;
 )
 public class AutoAppConfig {
 
-    @Bean
-    OrderService orderService(){
-        return new OrderServiceImpl();
-    }
-
+/*
     // 수동 빈 등록이 우선권 (수동 빈이 자동 빈을 오버라이딩)
     @Bean(name = "memoryMemberRepository")
     public MemoryMemberRepository memberRepository(){
         return new MemoryMemberRepository();
     }
+*/
 
 }
