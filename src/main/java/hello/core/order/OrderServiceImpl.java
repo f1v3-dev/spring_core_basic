@@ -5,6 +5,7 @@ import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -14,6 +15,7 @@ public class OrderServiceImpl implements OrderService{
     // DI 프레임워크가 없으면 아무것도 할 수 없음 -> 사용하지말자.
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
+
 
 //    @RequiredArgsConstructor에서 final 생성자 생성
 //    생성자 주입 (불변, 필수 의존관계에서 사용)
