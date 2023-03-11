@@ -14,25 +14,30 @@ public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    // [setter] 수정자 주입 (선택, 변경 가능성이 있는 의존관계에서 사용)
-//    @Autowired
-//    public void setMemberRepository(MemberRepository memberRepository) {
-//        this.memberRepository = memberRepository;
-//    }
-//
-//    @Autowired
-//    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
-//        this.discountPolicy = discountPolicy;
-//    }
-
-//     생성자 주입 (불변, 필수 의존관계에서 사용)
+//    생성자 주입 (불변, 필수 의존관계에서 사용)
 //     생성자가 1개인 경우 @Autowired 생략 가능
-//     new OrderServiceImpl(memberRepository, discountPolicy);
     @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
+
+/*
+
+//     [setter] 수정자 주입 (선택, 변경 가능성이 있는 의존관계에서 사용)
+    @Autowired
+    public void setMemberRepository(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+
+    @Autowired
+    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
+        this.discountPolicy = discountPolicy;
+    }
+*/
+
+
+
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
