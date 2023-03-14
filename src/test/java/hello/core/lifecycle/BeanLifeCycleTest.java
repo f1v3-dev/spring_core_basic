@@ -25,7 +25,7 @@ public class BeanLifeCycleTest {
 
         // 객체 생성과 초기화를 분리하는 이유는?
         // SRP(단일 책임 원칙)과 같이 역할을 구분하기 하자! -> 유지보수 관점에서 유리
-        @Bean
+        @Bean(initMethod = "init", destroyMethod = "close")
         public NetworkClient networkCilent(){
             NetworkClient networkClient = new NetworkClient();
             networkClient.setUrl("https://hello-spring.dev");
