@@ -40,4 +40,5 @@ public class PrototypeTest {
             System.out.println("SingletonBean.destroy");
         }
     }
+
 }
